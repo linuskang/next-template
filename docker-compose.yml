@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  myapp:
+    build: .
+    container_name: myapp
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://USERNAME:PASSWORD@postgres:5432/db
+      AUTH_SECRET: YOUR_SECRET_KEY
+      AUTH_GOOGLE_ID: YOUR_CLIENT
+      AUTH_GOOGLE_SECRET: YOUR_SECRET
+      AUTH_RESEND_KEY: "YOUR_RESEND_API_KEY"
+      AUTH_TRUST_HOST: "http://localhost:3000"
+      NEXTAUTH_URL: "http://localhost:3000"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:16
+    container_name: pgdb
+    restart: always
+    environment:
+      POSTGRES_USER: USERNAME
+      POSTGRES_PASSWORD: PASSWORD
+      POSTGRES_DB: db
+    ports:
+      - "5432:5432"
+networks:
+  myapp-network:
+    name: myapp-network
