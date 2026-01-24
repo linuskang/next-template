@@ -2,6 +2,7 @@
 
 import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
+import styles from './swagger.module.css';
 
 type SwaggerProps = {
     specUrl: string;
@@ -13,12 +14,16 @@ export default function SwaggerViewer({
 }: SwaggerProps) {
 
     return (
-        <SwaggerUI
-            url={specUrl}
-            spec={specObject}
-            docExpansion='list'
-            defaultModelsExpandDepth={-1}
-        />
+        <div className={styles.container}>
+            <div className={styles.viewer}>
+                <SwaggerUI
+                    url={specUrl}
+                    spec={specObject}
+                    docExpansion='list'
+                    defaultModelsExpandDepth={-1}
+                />
+            </div>
+        </div>
     )
 
 }
