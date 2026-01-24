@@ -17,6 +17,8 @@ export default function HomePage() {
             <div className="text-lg">
               Just the basics - Everything you need to know to set up your
               database and authentication.
+
+              Yep this is extremely real
             </div>
           </Link>
           <Link
