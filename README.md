@@ -1,6 +1,6 @@
 # My App
 
-A example application template built with T3 Stack
+An example application template built with T3 Stack
 
 ## Documentation
 
