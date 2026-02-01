@@ -1,10 +1,8 @@
 # My App
 
-An example application template built with T3 Stack
+An example application template built with T3 Stack.
 
-## Documentation
-
-See https://docs.myapp.com
+I've modified the layout to be more ideal, and added some of my own customisations w/ shadcn ui
 
 ## License
 
